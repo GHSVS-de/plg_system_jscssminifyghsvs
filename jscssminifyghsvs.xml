@@ -40,6 +40,7 @@
  <files>
   <filename plugin="jscssminifyghsvs">jscssminifyghsvs.php</filename>
   <filename>LICENSE.txt</filename>
+  <filename>README.md</filename>
   <folder>fields</folder>
   <folder>language</folder>
   <folder>myforms</folder>
