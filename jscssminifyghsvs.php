@@ -46,8 +46,7 @@ class PlgSystemJsCssMinifyGhsvs extends JPlugin
  function __construct(&$subject, $config = array())
  {
   parent::__construct($subject, $config);
-  $version = new JVersion;
-  $this->mediaversion = $version->generateMediaVersion();
+  $this->mediaversion = time();
  }
  
  public function onExtensionAfterSave($context, $table, $isNew)
