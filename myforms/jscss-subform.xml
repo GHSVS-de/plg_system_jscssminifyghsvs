@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+ <field name="source" class="input-xxlarge" type="text" default=""
+  label="PLG_SYSTEM_JSCSSMINIFYGHSVS_SOURCE"
+  description="PLG_SYSTEM_JSCSSMINIFYGHSVS_SOURCE_DESC" />
+
+ <field name="target" class="input-xxlarge" type="text" default=""
+  label="PLG_SYSTEM_JSCSSMINIFYGHSVS_TARGET"
+  description="PLG_SYSTEM_JSCSSMINIFYGHSVS_TARGET_DESC" />
+
+ <field name="note" class="input-xxlarge input-xxxlarge" type="text" label="PLG_SYSTEM_JSCSSMINIFYGHSVS_NOTE" description="" default="" />
+
+ <field name="active" type="list" onchange="jQuery.fn.changeListColor(this)"
+  label="PLG_SYSTEM_JSCSSMINIFYGHSVS_ACTIVE" description="">
+  <option value="0">JNO</option>
+  <option value="1">JYES</option>
+ </field>
+
+</form>
