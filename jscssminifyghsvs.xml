@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5.0" type="plugin" group="system" method="upgrade">
+ <name>PLG_SYSTEM_JSCSSMINIFYGHSVS</name>
+ <author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer</author>
+ <creationDate>2016-03-09</creationDate>
+ <copyright>Copyright (C) 2016, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.</copyright>
+ <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+ <authorEmail>jscssminifyghsvs @ ghsvs.de</authorEmail>
+ <authorUrl>http://www.ghsvs.de</authorUrl>
+ <version>2017-07-28</version>
+ <versionHistory>
+2016.03.09:
+- Start Plugin System jscssminifyghsvs
+2016.03.18:
+- complete revision. Mainly add subform from https://github.com/joomla/joomla-cms/pull/7829.
+2016.03.19:
+- add field note
+- combine xy-subform.xml in one jscss-subform.xml
+- add global field bak_to_folder
+- add translations (en, de)
+- add backend.css (for readable tooltips)
+2016.03.31:
+- add Preserve first comment
+- extend backup options
+- add hints modal
+2016.07.26:
+- namespaced form field Subform
+2016.07.30:
+- correct JS paths in /layouts/
+2016.08.27:
+- add ?mediaversion to Open target link to avoid browser caching.
+2017-07-28:
+- Remove own subform because ordering fails since B\C break in Joomla core.
+- Review: backend-uncompressed.js
+</versionHistory>
+ <description>PLG_SYSTEM_JSCSSMINIFYGHSVS_XML_DESCRIPTION</description>
+
+ <updateservers><server type="extension" priority="1" name="PLG_SYSTEM_JSCSSMINIFYGHSVS">http://snapshots.ghsvs.de/updates/joomla/plg_system_jscssminifyghsvs.xml</server></updateservers>
+
+ <files>
+  <filename plugin="jscssminifyghsvs">jscssminifyghsvs.php</filename>
+  <filename>LICENSE.txt</filename>
+  <folder>fields</folder>
+  <folder>language</folder>
+  <folder>myforms</folder>
+ </files>
+
+  <media destination="plg_system_jscssminifyghsvs" folder="media">-->
+  <folder>css</folder>
+  <folder>js</folder>
+  <!--<folder>layouts</folder>-->
+  <!--<folder>less</folder>-->
+  <!--<folder>images</folder>-->
+  </media>
+
+ <config>
+  <fields name="params" addfieldpath="plugins/system/jscssminifyghsvs/fields">
+   <fieldset name="basic">
+    <field type="hidden" default="1" name="jscssminifyghsvsplugin" />
+   </fieldset>
+   
+   <fieldset name="basicjscssminify"
+    label="PLG_SYSTEM_JSCSSMINIFYGHSVS_FIELDSET_BASICJSCSSMINIFY"
+    description="">
+    
+    <field name="basicjscssminifyspacer" type="spacer"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_FIELDSET_BASICJSCSSMINIFY_DESC" />
+
+    <field name="bakspacer" type="spacer"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_BAKSPACER"
+     description=""/>
+     
+    <field name="bak_target" type="radio" default="1" class="btn-group btn-group-yesno"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_BAK_TARGET"
+     description="PLG_SYSTEM_JSCSSMINIFYGHSVS_BAK_TARGET_DESC">
+     <option value="0">JNO</option>
+     <option value="1">JYES</option>
+    </field>
+
+    <field name="bak_to_folder" type="radio" default="1" class="btn-group btn-group-yesno"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_BAK_TO_FOLDER"
+     description="PLG_SYSTEM_JSCSSMINIFYGHSVS_BAK_TO_FOLDER_DESC">
+     <option value="0">JNO</option>
+     <option value="1">JYES</option>
+    </field>
+
+    <field name="preventfirstcommentspacer" type="spacer"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_PREVENTFIRSTCOMMENTSPACER"
+     description=""/>
+    <field name="preventfirstcommentspacer2" type="spacer"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_PREVENTFIRSTCOMMENTSPACER2"
+     description=""/>
+
+    <field name="preserve_first_comment" type="radio" default="0" class="btn-group btn-group-yesno"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_PRESERVE_FIRST_COMMENT"
+     description="PLG_SYSTEM_JSCSSMINIFYGHSVS_PRESERVE_FIRST_COMMENT_DESC">
+     <option value="0">JNO</option>
+     <option value="1">JYES</option>
+    </field>
+
+   </fieldset>
+
+   <fieldset name="js" label="PLG_SYSTEM_JSCSSMINIFYGHSVS_JSMIN">
+    
+    <field type="spacer" name="spacerJs" label="PLG_SYSTEM_JSCSSMINIFYGHSVS_SPACERJS" />
+    
+    <field type="text" name="extender_prefix_js" default=".min"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_EXTENDER_PREFIX"
+     description="PLG_SYSTEM_JSCSSMINIFYGHSVS_EXTENDER_PREFIX_DESC" />
+    
+    <field name="js" type="subform" min="1" max="100" multiple="true"
+     formsource="plugins/system/jscssminifyghsvs/myforms/jscss-subform.xml" 
+     layout="joomla.form.field.subform.repeatable" groupByFieldset="false"
+     label="" description="" />
+
+   </fieldset>
+   
+   <fieldset name="css" label="PLG_SYSTEM_JSCSSMINIFYGHSVS_CSSMIN">
+   
+    <field type="spacer" name="spacerCss" label="PLG_SYSTEM_JSCSSMINIFYGHSVS_SPACERCSS" />
+    
+    <field type="text" name="extender_prefix_css" default=".min"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_EXTENDER_PREFIX"
+     description="PLG_SYSTEM_JSCSSMINIFYGHSVS_EXTENDER_PREFIX_DESC" />
+
+    <field name="css" type="subform" min="1" max="100" multiple="true"
+     formsource="plugins/system/jscssminifyghsvs/myforms/jscss-subform.xml" 
+     layout="joomla.form.field.subform.repeatable" groupByFieldset="false"
+     label="" description="" />
+
+   </fieldset>
+   
+   <fieldset name="thanks" label="Thank you!">
+   
+    <field type="spacer" name="spacerthanks" label="PLG_SYSTEM_JSCSSMINIFYGHSVS_SPACERTHANKS" />
+    
+    <!--ALWAYS assets at last!!!-->
+    <field type="PlgSystemJscssminifyghsvs.assetsghsvs" name="assets" hidden="true" />
+
+   </fieldset>
+  </fields>
+ </config>
+</extension>
