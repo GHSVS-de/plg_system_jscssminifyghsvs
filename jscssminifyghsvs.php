@@ -195,13 +195,25 @@ class PlgSystemJsCssMinifyGhsvs extends JPlugin
        }
       } // preserve_first_comment
 
+      // 2017-09 for fallback behavior.
+      $content_tmp = $content;
+      
       // Get minified target content from web service sending source content.
-      if (!($content = self::getMinified($url, $content)))
+      if (!($content = self::getMinified($url, $content_tmp)))
       {
        $errors[] = JText::sprintf('PLG_SYSTEM_JSCSSMINIFYGHSVS_RETURNED_EMPTY', $url, $file_);
-       continue;
+       if ($this->params->get('fallback_' . $what, 0))
+       {
+        $content = $content_tmp;
+        $errors[] = JText::_('PLG_SYSTEM_JSCSSMINIFYGHSVS_RETURNED_EMPTY_FALLBACK');
+        unset($content_tmp);
+       }
+       else
+       {
+        continue;
+       }
       }
-      
+
       // Create target path plus "secure" file name if no target in file-set entered.
       if (!($file->target = trim($file->target)))
       {
