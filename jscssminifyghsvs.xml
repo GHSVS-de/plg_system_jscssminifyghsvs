@@ -7,7 +7,7 @@
  <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
  <authorEmail>jscssminifyghsvs @ ghsvs.de</authorEmail>
  <authorUrl>http://www.ghsvs.de</authorUrl>
- <version>2017-07-28</version>
+ <version>2017.09.11</version>
  <versionHistory>
 2016.03.09:
 - Start Plugin System jscssminifyghsvs
@@ -32,6 +32,8 @@
 2017-07-28:
 - Remove own subform because ordering fails since B\C break in Joomla core.
 - Review: backend-uncompressed.js
+2017.09.11:
+- New parameter fallback_css and fallback_js
 </versionHistory>
  <description>PLG_SYSTEM_JSCSSMINIFYGHSVS_XML_DESCRIPTION</description>
 
@@ -108,7 +110,14 @@
     <field type="text" name="extender_prefix_js" default=".min"
      label="PLG_SYSTEM_JSCSSMINIFYGHSVS_EXTENDER_PREFIX"
      description="PLG_SYSTEM_JSCSSMINIFYGHSVS_EXTENDER_PREFIX_DESC" />
-    
+
+    <field type="list" name="fallback_js" default="0"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_FALLBACK"
+     description="PLG_SYSTEM_JSCSSMINIFYGHSVS_FALLBACK_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+
     <field name="js" type="subform" min="1" max="100" multiple="true"
      formsource="plugins/system/jscssminifyghsvs/myforms/jscss-subform.xml" 
      layout="joomla.form.field.subform.repeatable" groupByFieldset="false"
@@ -123,6 +132,13 @@
     <field type="text" name="extender_prefix_css" default=".min"
      label="PLG_SYSTEM_JSCSSMINIFYGHSVS_EXTENDER_PREFIX"
      description="PLG_SYSTEM_JSCSSMINIFYGHSVS_EXTENDER_PREFIX_DESC" />
+
+    <field type="list" name="fallback_css" default="0"
+     label="PLG_SYSTEM_JSCSSMINIFYGHSVS_FALLBACK"
+     description="PLG_SYSTEM_JSCSSMINIFYGHSVS_FALLBACK_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
 
     <field name="css" type="subform" min="1" max="100" multiple="true"
      formsource="plugins/system/jscssminifyghsvs/myforms/jscss-subform.xml" 
