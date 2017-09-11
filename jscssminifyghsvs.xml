@@ -46,7 +46,7 @@
   <folder>myforms</folder>
  </files>
 
-  <media destination="plg_system_jscssminifyghsvs" folder="media">-->
+  <media destination="plg_system_jscssminifyghsvs" folder="media">
   <folder>css</folder>
   <folder>js</folder>
   <!--<folder>layouts</folder>-->
