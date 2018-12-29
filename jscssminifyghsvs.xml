@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.5.0" type="plugin" group="system" method="upgrade">
+<extension version="3.9.1" type="plugin" group="system" method="upgrade">
  <name>PLG_SYSTEM_JSCSSMINIFYGHSVS</name>
  <author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer</author>
  <creationDate>2016-03-09</creationDate>
  <copyright>Copyright (C) 2016, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.</copyright>
  <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
- <authorEmail>jscssminifyghsvs @ ghsvs.de</authorEmail>
+ <authorEmail></authorEmail>
  <authorUrl>http://www.ghsvs.de</authorUrl>
  <version>2017.09.11</version>
  <versionHistory>
