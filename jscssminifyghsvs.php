@@ -3,7 +3,7 @@
  * @package plugin.system jscssminifyghsvs for Joomla!
  * @version See jscssminifyghsvs.xml
  * @author G@HService Berlin Neukölln, Volkmar Volli Schlothauer
- * @copyright Copyright (C) 2016, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.
+ * @copyright Copyright (C) 2016-2018, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.
  * @license See jscssminifyghsvs.xml
  * @authorUrl http://www.ghsvs.de
  * @authorEmail jscssminifyghsvs @ ghsvs.de
