@@ -1,5 +1,6 @@
 # plg_system_jscssminifyghsvs
-# DOES NOT SUPPORT ES6 JAVASCRIPT!!!!!!!!
+## THIS PROJECT IS NO LONGER MAINTAINED.
+## DOES NOT SUPPORT ES6 JAVASCRIPT!!!!!!!!
 
 Minifies JavaScript and CSS using online webservices javascript-minifier.com and cssminifier.com but NOT while page load. You can start minify jobs and organise them from Joomla back-end with this little helper.
 
